@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Techfest 2026 · IIT Bombay — Ascent</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--fg:#fff;--mut:#ffffffb3;--a:#ffb36b;color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
+*{margin:0;box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:'Space Grotesk',system-ui,sans-serif;color:var(--fg);overflow-x:hidden;background:#1a1446}
+#bg{position:fixed;inset:0;z-index:0}#st{position:fixed;inset:0;z-index:1;width:100%;height:100%}
+.sec{position:relative;z-index:2}
+.l{position:absolute;will-change:transform}
+.ct{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 7vw;pointer-events:none}
+.ct .l{position:relative}
+.mono{font:12px 'JetBrains Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--a)}
+h1{font-size:clamp(3.4rem,17vw,16rem);line-height:.85;letter-spacing:-.06em;font-weight:700;background:linear-gradient(180deg,#fff 30%,#ffd2a8);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(2.4rem,7vw,6rem);line-height:.95;letter-spacing:-.045em;font-weight:700;max-width:12ch;margin-top:1rem;text-shadow:0 4px 40px #0006}
+p.t{max-width:42ch;margin-top:1.3rem;line-height:1.6;color:var(--mut);font-size:clamp(1rem,1.5vw,1.2rem)}
+/* hero */
+#s1{height:135vh}#s1 .ct{justify-content:flex-start;padding-top:20vh}
+.sub{font-size:clamp(1rem,2.2vw,1.8rem);margin-top:1.4rem;letter-spacing:.02em}
+.hill{left:-5%;width:110%;height:75vh;bottom:-38vh}
+.sun{width:46vw;height:46vw;max-width:620px;max-height:620px;left:50%;margin-left:-23vw;top:36vh;border-radius:50%;background:radial-gradient(closest-side,#fff6d6,#ffb36b 40%,#ff6b6b00 72%)}
+.sk{left:0;width:100%;height:30vh;bottom:-8vh}
+.scroll{position:absolute;left:7vw;bottom:8vh;font:11px 'JetBrains Mono',monospace;letter-spacing:.3em;animation:pu 2s infinite;z-index:5}
+@keyframes pu{50%{opacity:.35;transform:translateY(7px)}}
+.rk{width:clamp(70px,9vw,130px);right:14%;bottom:22vh}
+.rk svg,.ld svg{width:100%;height:auto;overflow:visible;display:block}
+.fl{transform-origin:50% 0;animation:fl .12s infinite alternate}
+@keyframes fl{to{transform:scaleY(1.35)}}
+/* clouds */
+#s2{height:125vh}.cl{border-radius:50%;background:radial-gradient(closest-side,#fff,#fff0);filter:blur(5px)}
+/* orbit */
+#s3{height:150vh}
+.earth{width:170vw;height:170vw;left:-35vw;top:70%;border-radius:50%;background:radial-gradient(circle at 50% 8%,#6fd0ff,#1c63c9 14%,#0a2a73 40%,#040b26 70%);box-shadow:0 0 120px 20px #4aa8ff66,inset 0 0 80px #9fe0ff55}
+.ev{width:min(270px,44vw);padding:1.3rem;border-radius:20px;background:#ffffff14;border:1px solid #ffffff2e;backdrop-filter:blur(16px);transition:.3s;cursor:default}
+.ev:hover{background:#ffffff26;border-color:#fff8}
+.ev b{font:11px 'JetBrains Mono',monospace;color:var(--a);letter-spacing:.2em}.ev h3{font-size:1.7rem;letter-spacing:-.03em;margin:.4rem 0}.ev span{font-size:.92rem;color:var(--mut);line-height:1.5;display:block}
+.sat{width:90px}.sat svg{width:100%;overflow:visible}
+/* space */
+#s4{height:140vh}
+.neb{border-radius:50%;filter:blur(70px);opacity:.55}
+.pl{border-radius:50%}
+.ring{position:absolute;left:-40%;top:38%;width:180%;height:24%;border:7px solid #ffd9a866;border-radius:50%;transform:rotate(-18deg)}
+.mq{white-space:nowrap;font-size:clamp(4rem,13vw,12rem);font-weight:700;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px #ffffff55;left:0}
+.stats{display:flex;gap:4vw;flex-wrap:wrap;margin-top:2rem}.stats>div{will-change:transform}
+.stats b{display:block;font-size:clamp(2.4rem,6vw,5rem);letter-spacing:-.05em}.stats i{font:11px 'JetBrains Mono',monospace;letter-spacing:.2em;font-style:normal;color:var(--a);text-transform:uppercase}
+/* moon */
+#s5{height:115vh}.moon{left:-5%;width:110%;height:60vh;bottom:-30vh}
+.btn{pointer-events:auto;display:inline-block;margin-top:2rem;align-self:flex-start;padding:1.15rem 2.4rem;border-radius:99px;background:#fff;color:#0a0a1c;text-decoration:none;font-weight:700;letter-spacing:.03em;transition:.3s;box-shadow:0 0 0 0 #fff6}
+.btn:hover{transform:scale(1.06);box-shadow:0 0 0 14px #fff2}
+.ld{width:clamp(60px,8vw,110px);left:62%;top:14%}
+.foot{position:absolute;bottom:3vh;left:7vw;right:7vw;display:flex;justify-content:space-between;font:11px 'JetBrains Mono',monospace;letter-spacing:.2em;color:#0a0a1c;z-index:6;text-transform:uppercase}
+/* hud */
+.hud{position:fixed;z-index:9;font:11px 'JetBrains Mono',monospace;letter-spacing:.25em;text-transform:uppercase;pointer-events:none;text-shadow:0 1px 10px #0008}
+.tl{top:calc(env(safe-area-inset-top,0px) + 22px);left:7vw}.tr{top:calc(env(safe-area-inset-top,0px) + 22px);right:7vw}
+.lab{left:2.2vw;top:50%;writing-mode:vertical-rl;transform:rotate(180deg)}
+#bar{position:fixed;z-index:9;left:0;top:0;height:3px;width:0;background:#fff;box-shadow:0 0 14px #fff}
+@media(max-width:700px){.lab{display:none}.ld{left:55%}}
+@media(prefers-reduced-motion:reduce){.fl,.scroll{animation:none}}
+</style></head><body>
+<div id="bg"></div><canvas id="st"></canvas><div id="bar"></div>
+<div class="hud tl">Techfest ’26 · IIT Bombay</div><div class="hud tr" id="alt">Alt 0 km</div><div class="hud lab" id="lab">01 — Dusk</div>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="rkt" viewBox="0 0 60 150"><g class="fl"><path d="M20 112Q30 175 40 112Z" fill="#ffb347"/><path d="M25 112Q30 150 35 112Z" fill="#fff3b0"/></g><path d="M12 84L0 116l16-8zM48 84l12 32-16-8z" fill="#ff5d73"/><path d="M30 0C46 22 50 60 46 112H14C10 60 14 22 30 0z" fill="#f3f6ff"/><path d="M30 0C40 18 44 40 44 62H16C16 40 20 18 30 0z" fill="#ff5d73"/><circle cx="30" cy="76" r="9" fill="#27408f" stroke="#cfd8ff" stroke-width="3"/><rect x="14" y="108" width="32" height="8" rx="3" fill="#9aa5c8"/></symbol>
+<symbol id="sat" viewBox="0 0 120 50"><rect x="0" y="14" width="40" height="22" fill="#2b5fd0" stroke="#9fc4ff"/><rect x="80" y="14" width="40" height="22" fill="#2b5fd0" stroke="#9fc4ff"/><rect x="44" y="8" width="32" height="34" rx="5" fill="#d9deef"/><circle cx="60" cy="25" r="7" fill="#27408f"/><path d="M40 25h4M76 25h4" stroke="#fff" stroke-width="2"/></symbol></defs></svg>
+
+<section class="sec" id="s1">
+ <div class="l sun" data-s="-.7" data-f="1.1"></div>
+ <div class="ct"><div class="l mono" data-s="-.3" data-f=".9">IIT Bombay · Dec 2026</div><h1 class="l" data-s="-.42" data-f="1">TECH<br>FEST</h1><div class="l sub" data-s="-.2" data-f=".9">Asia’s largest science &amp; technology festival.<br>Scroll to <b style="color:var(--a)">ascend</b>.</div></div>
+ <div class="l hill" data-s="-.35" data-f="1.2" style="z-index:3;background:linear-gradient(#5b2d7a,#2a1456);clip-path:polygon(0 52%,10% 36%,22% 50%,38% 22%,52% 46%,68% 28%,84% 48%,100% 30%,100% 100%,0 100%)"></div>
+ <div class="l hill" data-s="-.18" data-f="1.2" style="z-index:4;background:linear-gradient(#3a1b63,#170c3a);clip-path:polygon(0 60%,15% 44%,30% 58%,46% 36%,62% 56%,80% 38%,100% 58%,100% 100%,0 100%)"></div>
+ <svg class="l sk" id="sky" data-s="-.08" data-f="1.2" style="z-index:5" viewBox="0 0 1200 200" preserveAspectRatio="none"></svg>
+ <div class="l rk" data-s=".95" style="z-index:4"><svg viewBox="0 0 60 175"><use href="#rkt" width="60" height="150"/></svg></div>
+ <div class="l hill" data-s=".14" data-f="1.2" style="z-index:7;height:34vh;bottom:-22vh;background:#0a0620;clip-path:polygon(0 40%,18% 20%,35% 42%,55% 16%,75% 40%,100% 18%,100% 100%,0 100%)"></div>
+ <div class="scroll">SCROLL ↓</div>
+</section>
+
+<section class="sec" id="s2">
+ <div class="l cl" data-s="-.55" data-h=".25" style="left:-15%;top:10%;width:70vw;height:26vw;opacity:.55"></div>
+ <div class="l cl" data-s="-.3" data-h="-.3" style="right:-20%;top:35%;width:75vw;height:28vw;opacity:.7"></div>
+ <div class="l cl" data-s=".45" data-h=".4" style="left:-25%;top:62%;width:80vw;height:30vw;z-index:5"></div>
+ <div class="l cl" data-s=".8" data-h="-.5" style="right:-30%;top:78%;width:90vw;height:34vw;z-index:5"></div>
+ <div class="ct"><div class="l mono" data-s="0" data-f=".6">01 / Lift-off</div><h2 class="l" data-s=".12" data-f=".6">Where curiosity <span style="color:var(--a)">lifts off</span></h2><p class="t l" data-s=".28" data-f=".6">Every December, Powai turns into a launchpad. Students, builders and legends collide for three days that don’t slow down — and neither should you.</p></div>
+</section>
+
+<section class="sec" id="s3">
+ <div class="l earth" data-s="-.25"></div>
+ <div class="l sat" data-s=".6" data-r="-1.5" style="left:12%;top:20%"><svg viewBox="0 0 120 50"><use href="#sat" width="120" height="50"/></svg></div>
+ <div class="l sat" data-s="-.2" data-r="1" style="right:10%;top:12%;width:55px;opacity:.7"><svg viewBox="0 0 120 50"><use href="#sat" width="120" height="50"/></svg></div>
+ <div class="ct" style="justify-content:flex-start;padding-top:22vh"><div class="l mono" data-s="0" data-f=".6">02 / Orbit</div><h2 class="l" data-s=".1" data-f=".6">Four arenas. One <span style="color:var(--a)">orbit.</span></h2></div>
+ <div class="l ev" data-s=".18" style="left:7vw;top:58%"><b>01</b><h3>Robotics</h3><span>Autonomous bots, drones and combat arenas.</span></div>
+ <div class="l ev" data-s=".42" style="left:calc(7vw + 28vw);top:70%"><b>02</b><h3>AI Lab</h3><span>Hackathons for models that think, see and build.</span></div>
+ <div class="l ev" data-s=".3" style="right:7vw;top:50%"><b>03</b><h3>Aerospace</h3><span>Rockets, satellites and flight simulation.</span></div>
+ <div class="l ev" data-s=".6" style="right:7vw;top:80%"><b>04</b><h3>Startups</h3><span>Pitch your idea on the main stage.</span></div>
+</section>
+
+<section class="sec" id="s4">
+ <div class="l neb" data-s="-.7" style="left:-10%;top:5%;width:60vw;height:60vw;background:#6a2cff"></div>
+ <div class="l neb" data-s="-.5" style="right:-15%;top:40%;width:55vw;height:55vw;background:#ff2c8f"></div>
+ <div class="l pl" data-s=".25" data-r="2" style="left:8%;top:62%;width:clamp(120px,16vw,230px);aspect-ratio:1;background:radial-gradient(circle at 30% 30%,#ffe3b0,#d9803f 55%,#4a1f3a);box-shadow:inset -20px -10px 40px #0008"><div class="ring"></div></div>
+ <div class="l pl" data-s="-.35" style="right:14%;top:12%;width:clamp(50px,7vw,100px);aspect-ratio:1;background:radial-gradient(circle at 30% 30%,#fff,#9aa5c8 60%,#3a4268)"></div>
+ <div class="l mq" data-s="-.15" data-h="-.5" style="top:10%">SCIENCE · TECHNOLOGY · INNOVATION · SCIENCE ·</div>
+ <div class="l mq" data-s=".1" data-h=".5" style="top:72%;left:-60%">BUILD · BREAK · REPEAT · BUILD · BREAK ·</div>
+ <div class="ct"><div class="l mono" data-s="0" data-f=".6">03 / Deep space</div><h2 class="l" data-s=".1" data-f=".6">Scale that <span style="color:var(--a)">bends</span> the map</h2>
+ <div class="stats"><div class="l" data-s=".2" data-f=".6" style="position:relative"><b>100+</b><i>Events</i></div><div class="l" data-s=".4" data-f=".6" style="position:relative"><b>30+</b><i>Countries</i></div><div class="l" data-s=".6" data-f=".6" style="position:relative"><b>3</b><i>Days</i></div></div></div>
+</section>
+
+<section class="sec" id="s5">
+ <div class="l ld" data-s="-.75" data-f="1"><svg viewBox="0 0 60 150" style="transform:rotate(180deg)"><use href="#rkt" width="60" height="150"/></svg></div>
+ <div class="ct"><div class="l mono" data-s="0" data-f=".7">04 / Touchdown</div><h2 class="l" data-s=".1" data-f=".7">Land at <span style="color:var(--a)">Techfest</span></h2><p class="t l" data-s=".2" data-f=".7">The mission is simple: show up, build something strange, leave a mark.</p><a class="btn l" data-s=".3" data-f=".7" href="#">Register for Techfest 2026 →</a></div>
+ <div class="l moon" data-s="-.2" style="z-index:3;background:linear-gradient(#bfc4d6,#6d7390);clip-path:polygon(0 30%,20% 18%,45% 28%,70% 14%,100% 26%,100% 100%,0 100%)"></div>
+ <div class="l moon" data-s=".05" style="z-index:4;height:42vh;bottom:-24vh;background:linear-gradient(#8f95ad,#2b2f4a);clip-path:polygon(0 36%,25% 22%,52% 34%,78% 18%,100% 32%,100% 100%,0 100%)"></div>
+ <div class="foot"><span>IIT Bombay · Powai</span><span>Techfest 2026</span></div>
+</section>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// skyline w/ gothic clock tower
+(()=>{let d='M0 200V150',x=0,w='';const r=(a,b)=>a+Math.random()*(b-a);
+while(x<1200){const bw=r(20,48),bh=r(40,95);if(x>470&&x<740){d+=`L${x} 150`;x+=30;continue}d+=`L${x} ${200-bh}L${x+bw} ${200-bh}`;for(let k=0;k<3;k++)w+=`<rect x="${x+r(3,bw-8)}" y="${200-bh+r(6,bh-14)}" width="4" height="5" fill="#ffd27a" opacity=".8"/>`;x+=bw}
+d+='L1200 200Z';
+const tw=`<path d="M470 150h270v50H470z M585 150V66h40v84zM578 66l27-62 27 62z" fill="#0f0828"/><rect x="590" y="82" width="30" height="14" rx="7" fill="#ffd27a"/>`+[490,520,640,670,700].map(a=>`<path d="M${a} 200v-26a8 8 0 0116 0v26z" fill="#ffd27a" opacity=".7"/>`).join('');
+$('#sky').innerHTML=`<path d="${d}" fill="#0f0828"/>${tw}${w}`})();
+// layers
+let L=[],vh,dh,W,H,cur=scrollY,mx=0,mxs=0;
+const cv=$('#st'),cx=cv.getContext('2d'),stars=[...Array(300)].map(()=>({x:Math.random(),y:Math.random(),d:Math.random()*.8+.2,t:Math.random()*6}));
+function measure(){vh=innerHeight;dh=document.documentElement.scrollHeight;W=cv.width=innerWidth;H=cv.height=innerHeight;
+ L=$$('[data-s],[data-h],[data-r]').map(el=>{const s=el.closest('.sec');return{el,s:+el.dataset.s||0,h:+el.dataset.h||0,r:+el.dataset.r||0,f:+el.dataset.f||0,mid:s.offsetTop+s.offsetHeight/2}})}
+addEventListener('resize',measure);addEventListener('load',measure);measure();
+addEventListener('pointermove',e=>mx=e.clientX/innerWidth*2-1);
+const ST=[['#1a1446','#ff8a5c'],['#2f5fc4','#a6d8ff'],['#0b1238','#2a4aa0'],['#05030f','#1c0c46'],['#0a0a1c','#2b2f4a']];
+const hx=h=>[1,3,5].map(i=>parseInt(h.substr(i,2),16)),mix=(a,b,t)=>{a=hx(a);b=hx(b);return`rgb(${a.map((v,i)=>Math.round(v+(b[i]-v)*t))})`};
+const NM=['Dusk','Lift-off','Orbit','Deep space','Touchdown'];
+function tick(t){t*=.001;
+ cur=RM?scrollY:cur+(scrollY-cur)*.1;mxs+=(mx-mxs)*.06;
+ const p=clamp(cur/Math.max(1,dh-vh)),f=p*4,i=Math.min(Math.floor(f),3),e=f-i;
+ $('#bg').style.background=`linear-gradient(${mix(ST[i][0],ST[i+1][0],e)},${mix(ST[i][1],ST[i+1][1],e)})`;
+ root=document.documentElement.style.setProperty('--a',['#ffb36b','#ffd27a','#7fd0ff','#ff8fd0','#ffd27a'][Math.round(f)]);
+ for(const l of L){const c=l.mid-(cur+vh/2);if(Math.abs(c)>vh*2.2)continue;
+  l.el.style.transform=`translate3d(${l.h*c+mxs*(l.s+.8)*16}px,${c*l.s}px,0) rotate(${c*l.r*.01}deg)`;
+  if(l.f)l.el.style.opacity=clamp(1.3-Math.abs(c)/(vh*l.f))}
+ cx.clearRect(0,0,W,H);const base=clamp((p-.12)*2.4,.12,1);cx.fillStyle='#fff';
+ for(const s of stars){const y=((s.y*H-cur*s.d*.35)%H+H)%H;cx.globalAlpha=base*(.5+.5*Math.sin(t*2+s.t));cx.fillRect(s.x*W,y,s.d*2,s.d*2)}
+ $('#bar').style.width=p*100+'%';$('#lab').textContent=`0${Math.round(f)+1} — ${NM[Math.round(f)]}`;
+ $('#alt').textContent=`Alt ${Math.round(Math.min(p*1.4,1)*400)} km`;
+ requestAnimationFrame(tick)}
+requestAnimationFrame(tick);
+</script></body></html>
